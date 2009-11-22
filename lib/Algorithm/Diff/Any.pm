@@ -46,7 +46,7 @@ eval {
   # Import external subroutines here
   no strict 'refs';
   for my $func (@EXPORT_OK) {
-    *{$func} = \&{'Algorithm::Diff::XS' . $func'};
+    *{$func} = \&{'Algorithm::Diff::XS' . $func};
   }
 };
 
@@ -57,7 +57,7 @@ if ($@) {
   # Import external subroutines here
   no strict 'refs';
   for my $func (@EXPORT_OK) {
-    *{$func} = \&{'Algorithm::Diff::' . $func'};
+    *{$func} = \&{'Algorithm::Diff::' . $func};
   }
 }
 
@@ -146,10 +146,10 @@ sub new {
   };
 
   if ($DRIVER eq 'XS') {
-    $self->{backend} = Algorithm::Diff::XS->new(@opts);
+    $self->{backend} = Algorithm::Diff::XS->new($seq1, $seq2, $opts);
   }
   else {
-    $self->{backend} = Algorithm::Diff->new(@seed);
+    $self->{backend} = Algorithm::Diff->new($seq1, $seq2, $opts);
   }
 
   bless($self, $class);

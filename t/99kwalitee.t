@@ -3,7 +3,7 @@
 # t/99kwalitee.t
 #  Uses the CPANTS Kwalitee metrics to test the distribution
 #
-# $Id: 99kwalitee.t 8614 2009-08-18 03:19:57Z FREQUENCY@cpan.org $
+# $Id$
 
 use strict;
 use warnings;

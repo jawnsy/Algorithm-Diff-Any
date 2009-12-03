@@ -3,7 +3,7 @@
 # t/00signature.t
 #  Test that the SIGNATURE matches the distribution
 #
-# $Id: 00signature.t 8200 2009-07-25 17:18:00Z FREQUENCY@cpan.org $
+# $Id$
 
 use strict;
 use warnings;

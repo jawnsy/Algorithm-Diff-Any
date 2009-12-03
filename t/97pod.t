@@ -3,7 +3,7 @@
 # t/97pod.t
 #  Checks that POD commands are correct
 #
-# $Id: 97pod.t 8614 2009-08-18 03:19:57Z FREQUENCY@cpan.org $
+# $Id$
 
 use strict;
 use warnings;

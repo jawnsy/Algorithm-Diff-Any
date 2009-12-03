@@ -2,7 +2,7 @@
 #  An interface that automagically selects the XS or Pure Perl port of
 #  the diff algorithm (Algorithm::Diff or Algorithm::Diff::XS)
 #
-# $Id: ISAAC.pm 9526 2009-10-04 04:23:46Z FREQUENCY@cpan.org $
+# $Id$
 
 package Algorithm::Diff::Any;
 
@@ -29,7 +29,7 @@ Algorithm::Diff::Any - Perl module to find differences between files
 
 =head1 VERSION
 
-Version 1.000 ($Id: ISAAC.pm 9526 2009-10-04 04:23:46Z FREQUENCY@cpan.org $)
+Version 1.000 ($Id$)
 
 =cut
 
@@ -46,7 +46,7 @@ eval {
   # Import external subroutines here
   no strict 'refs';
   for my $func (@EXPORT_OK) {
-    *{$func} = \&{'Algorithm::Diff::XS' . $func};
+    *{$func} = \&{'Algorithm::Diff::XS::' . $func};
   }
 };
 

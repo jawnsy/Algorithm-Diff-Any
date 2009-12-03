@@ -3,7 +3,7 @@
 # Build.PL
 #  Script to build and install this distribution
 #
-# $Id: Build.PL 9526 2009-10-04 04:23:46Z FREQUENCY@cpan.org $
+# $Id$
 
 use strict;
 use warnings;

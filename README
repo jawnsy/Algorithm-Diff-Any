@@ -1,4 +1,4 @@
-$Id: README 9526 2009-10-04 04:23:46Z FREQUENCY@cpan.org $
+$Id$
 
 Algorithm::Diff::Any is a module to find differences between files
 

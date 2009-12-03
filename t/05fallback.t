@@ -35,8 +35,11 @@ eval {
 };
 ok(!$@, 'Algorithm::Diff::Any interface compiled and loaded');
 
-my $rng = Algorithm::Diff::Any->new();
-isa_ok($rng, 'Algorithm::Diff::Any');
+my $diff = Algorithm::Diff::Any->new(
+  [ qw(a b c d e f) ],
+  [ qw(a b c d f g) ]
+);
+isa_ok($diff, 'Algorithm::Diff::Any');
 
 ok(defined $Algorithm::Diff::Any::DRIVER, 'The DRIVER is defined');
 is($Algorithm::Diff::Any::DRIVER, 'PP', 'Pure Perl version is loaded');

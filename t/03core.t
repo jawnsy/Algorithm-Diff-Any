@@ -8,7 +8,7 @@
 use strict;
 use warnings;
 
-use Test::More tests => 3;
+use Test::More tests => 4;
 use Test::NoWarnings; # 1 test
 
 use Algorithm::Diff::Any;
@@ -17,6 +17,9 @@ use Algorithm::Diff::Any;
 {
   eval { Algorithm::Diff::Any->new('a', 'b'); };
   ok($@, '->new called with string sequences');
+
+  eval { Algorithm::Diff::Any->new([ 'a' ], 'b'); };
+  ok($@, '->new called with one array, one string sequence');
 
   my $obj = Algorithm::Diff::Any->new(
     ['a', 'b', 'c'],

@@ -183,7 +183,9 @@ See L<Algorithm::Diff> for method documentation.
 =cut
 
 sub Reset {
-  shift->{backend}->Reset(@_);
+  my $self = shift;
+  $self->{backend}->Reset(@_);
+  return $self;
 }
 
 =head2 $diff->Copy( $pos, $newBase )
@@ -418,28 +420,37 @@ C<cdiff> subroutine.
 
 =head2 TEST COVERAGE
 
-  ----------------------- ------ ------ ------ ------ ------ ------
-  File                     stmt   bran   cond   sub    pod   total
-  ----------------------- ------ ------ ------ ------ ------ ------
-  Math/Random/ISAAC.pm    100.0  100.0  n/a    100.0  100.0  100.0
-  Math/Random/ISAAC/PP.pm 100.0  100.0  n/a    100.0  100.0  100.0
-  Total                   100.0  100.0  n/a    100.0  100.0  100.0
+  -------------------------- ------ ------ ------ ------ ------ ------
+  File                        stmt   bran   cond   sub    pod   total
+  -------------------------- ------ ------ ------ ------ ------ ------
+  lib/Algorithm/Diff/Any.pm   97.6   50.0   33.3  100.0  100.0  92.7
+  Total                       97.6   50.0   33.3  100.0  100.0  92.7
+
+Yes, the test coverage is pretty abysmal in some areas. I'm working on it.
 
 =head1 LICENSE
 
-In a perfect world, I could just say that this package and all of the code
-it contains is Public Domain. It's a bit more complicated than that; you'll
-have to read the included F<LICENSE> file to get the full details.
+Copyright (C) 2009 by Jonathan Yu <jawnsy@cpan.org>
+
+This package is distributed under the same terms as Perl itself. Please
+see the F<LICENSE> file included in this distribution for full details of
+these terms.
 
 =head1 DISCLAIMER OF WARRANTY
 
-The software is provided "AS IS", without warranty of any kind, express or
-implied, including but not limited to the warranties of merchantability,
-fitness for a particular purpose and noninfringement. In no event shall the
-authors or copyright holders be liable for any claim, damages or other
-liability, whether in an action of contract, tort or otherwise, arising from,
-out of or in connection with the software or the use or other dealings in
-the software.
+This software is provided by the copyright holders and contributors
+"AS IS" and ANY EXPRESS OR IMPLIED WARRANTIES, including, but not
+limited to, the IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED.
+
+In no event shall the copyright owner or contributors be liable for
+any direct, indirect, incidental, special, exemplary or consequential
+damages (including, but not limited to, procurement of substitute
+goods or services; loss of use, data or profits; or business
+interruption) however caused and on any theory of liability, whether
+in contract, strict liability or tort (including negligence or
+otherwise) arising in any way out of the use of this software, even if
+advised of the possibility of such damage.
 
 =cut
 

@@ -156,6 +156,126 @@ sub new {
   return $self;
 }
 
+=head2 $diff->Next( $count )
+
+See L<Algorithm::Diff> for method documentation.
+
+=cut
+
+sub Next {
+  shift->{backend}->Next(@_);
+}
+
+=head2 $diff->Prev( $count )
+
+See L<Algorithm::Diff> for method documentation.
+
+=cut
+
+sub Prev {
+  shift->{backend}->Prev(@_);
+}
+
+=head2 $diff->Reset( $pos )
+
+See L<Algorithm::Diff> for method documentation.
+
+=cut
+
+sub Reset {
+  shift->{backend}->Reset(@_);
+}
+
+=head2 $diff->Copy( $pos, $newBase )
+
+See L<Algorithm::Diff> for method documentation.
+
+=cut
+
+sub Copy {
+  shift->{backend}->Copy(@_);
+}
+
+=head2 $diff->Base( $newBase )
+
+See L<Algorithm::Diff> for method documentation.
+
+=cut
+
+sub Base {
+  shift->{backend}->Base(@_);
+}
+
+=head2 $diff->Diff( )
+
+See L<Algorithm::Diff> for method documentation.
+
+=cut
+
+sub Diff {
+  shift->{backend}->Diff(@_);
+}
+
+=head2 $diff->Same( )
+
+See L<Algorithm::Diff> for method documentation.
+
+=cut
+
+sub Same {
+  shift->{backend}->Same(@_);
+}
+
+=head2 $diff->Items( $seqNum )
+
+See L<Algorithm::Diff> for method documentation.
+
+=cut
+
+sub Items {
+  shift->{backend}->Items(@_);
+}
+
+=head2 $diff->Range( $seqNum, $base )
+
+See L<Algorithm::Diff> for method documentation.
+
+=cut
+
+sub Range {
+  shift->{backend}->Range(@_);
+}
+
+=head2 $diff->Min( $seqNum, $base )
+
+See L<Algorithm::Diff> for method documentation.
+
+=cut
+
+sub Min {
+  shift->{backend}->Min(@_);
+}
+
+=head2 $diff->Max( $seqNum, $base )
+
+See L<Algorithm::Diff> for method documentation.
+
+=cut
+
+sub Max {
+  shift->{backend}->Max(@_);
+}
+
+=head2 $diff->Get( @names )
+
+See L<Algorithm::Diff> for method documentation.
+
+=cut
+
+sub Get {
+  shift->{backend}->Get(@_);
+}
+
 =head1 AUTHOR
 
 Jonathan Yu E<lt>jawnsy@cpan.orgE<gt>

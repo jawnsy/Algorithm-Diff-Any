@@ -454,10 +454,8 @@ C<cdiff> subroutine.
   -------------------------- ------ ------ ------ ------ ------ ------
   File                        stmt   bran   cond   sub    pod   total
   -------------------------- ------ ------ ------ ------ ------ ------
-  lib/Algorithm/Diff/Any.pm   97.6   50.0   33.3  100.0  100.0  92.7
-  Total                       97.6   50.0   33.3  100.0  100.0  92.7
-
-Yes, the test coverage is pretty abysmal in some areas. I'm working on it.
+  lib/Algorithm/Diff/Any.pm  100.0  100.0  100.0  100.0  100.0  100.0
+  Total                      100.0  100.0  100.0  100.0  100.0  100.0
 
 =head1 LICENSE
 

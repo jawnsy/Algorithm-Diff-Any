@@ -1,4 +1,4 @@
-#!/usr/bin/perl -T
+#!/usr/bin/perl
 
 # t/98pod-coverage.t
 #  Ensures all subroutines are documented with POD

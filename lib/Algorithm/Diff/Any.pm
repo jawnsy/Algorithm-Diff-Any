@@ -116,6 +116,37 @@ with any version of Perl that supports its prerequisite modules.
 If you encounter any problems on a different version or architecture, please
 contact the maintainer.
 
+=head1 EXPORTABLE FUNCTIONS
+
+The following functions are available for import into your namespace:
+
+=over
+
+=item * prepare
+
+=item * LCS
+
+=item * LCSidx
+
+=item * LCS_length
+
+=item * diff
+
+=item * sdiff
+
+=item * compact_diff
+
+=item * traverse_sequences
+
+=item * traverse_balanced
+
+=back
+
+For full documentation, see the relevant functional descriptions in the Pure
+Perl implementation, L<Algorithm::Diff>.
+
+=cut
+
 =head1 METHODS
 
 =head2 Algorithm::Diff::Any->new( \@seq1, \@seq2, [ \%opts ] )

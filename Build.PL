@@ -12,7 +12,7 @@ use Module::Build;
 
 my $builder = Module::Build->new(
   module_name           => 'Algorithm::Diff::Any',
-  license               => 'unrestricted',
+  license               => 'perl',
   dist_author           => 'Jonathan Yu <jawnsy@cpan.org>',
   dist_version_from     => 'lib/Algorithm/Diff/Any.pm',
   dynamic_config        => 0,
@@ -26,6 +26,7 @@ my $builder = Module::Build->new(
 
   requires => {
     'perl'              => 5.006,
+    'Exporter'          => 5.57, # for: use Exporter 'import'
     'Algorithm::Diff'   => 0,
 
     # The tests are based on Test::More

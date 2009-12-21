@@ -29,11 +29,11 @@ Algorithm::Diff::Any - Perl module to find differences between files
 
 =head1 VERSION
 
-Version 1.000 ($Id$)
+Version 1.001 ($Id$)
 
 =cut
 
-our $VERSION = '1.000';
+our $VERSION = '1.001';
 $VERSION = eval $VERSION;
 
 our $DRIVER = 'PP';
@@ -149,7 +149,9 @@ Perl implementation, L<Algorithm::Diff>.
 
 =head1 METHODS
 
-=head2 Algorithm::Diff::Any->new( \@seq1, \@seq2, [ \%opts ] )
+=head2 new
+
+  Algorithm::Diff::Any->new( \@seq1, \@seq2, \%opts );
 
 Creates a C<Algorithm::Diff::Any> object, based upon either the optimized
 C/XS version of the algorithm, L<Algorithm::Diff::XS>, or falls back to
@@ -157,7 +159,9 @@ the Pure Perl implementation, L<Algorithm::Diff>.
 
 Example code:
 
-  my $diff = Algorithm::Diff->new( \@seq1, \@seq2 );
+  my $diff = Algorithm::Diff::Any->new( \@seq1, \@seq2 );
+  # or with options
+  my $diff = Algorithm::Diff::Any->new( \@seq1, \@seq2, \%opts );
 
 This method will return an appropriate B<Algorithm::Diff::Any> object or
 throw an exception on error.
@@ -187,7 +191,9 @@ sub new {
   return $self;
 }
 
-=head2 $diff->Next( $count )
+=head2 Next
+
+  $diff->Next( $count )
 
 See L<Algorithm::Diff> for method documentation.
 
@@ -197,7 +203,9 @@ sub Next {
   shift->{backend}->Next(@_);
 }
 
-=head2 $diff->Prev( $count )
+=head2 Pref
+
+  $diff->Prev( $count )
 
 See L<Algorithm::Diff> for method documentation.
 
@@ -207,7 +215,9 @@ sub Prev {
   shift->{backend}->Prev(@_);
 }
 
-=head2 $diff->Reset( $pos )
+=head2 Reset
+
+  $diff->Reset( $pos )
 
 See L<Algorithm::Diff> for method documentation.
 
@@ -219,7 +229,9 @@ sub Reset {
   return $self;
 }
 
-=head2 $diff->Copy( $pos, $newBase )
+=head2 Copy
+
+  $diff->Copy( $pos, $newBase )
 
 See L<Algorithm::Diff> for method documentation.
 
@@ -229,7 +241,9 @@ sub Copy {
   shift->{backend}->Copy(@_);
 }
 
-=head2 $diff->Base( $newBase )
+=head2 Base
+
+  $diff->Base( $newBase )
 
 See L<Algorithm::Diff> for method documentation.
 
@@ -239,7 +253,9 @@ sub Base {
   shift->{backend}->Base(@_);
 }
 
-=head2 $diff->Diff( )
+=head2 Diff
+
+  $diff->Diff( )
 
 See L<Algorithm::Diff> for method documentation.
 
@@ -249,9 +265,13 @@ sub Diff {
   shift->{backend}->Diff(@_);
 }
 
-=head2 $diff->Same( )
+=head2 Same
 
 See L<Algorithm::Diff> for method documentation.
+
+Code example:
+
+  $diff->Same( )
 
 =cut
 
@@ -259,7 +279,9 @@ sub Same {
   shift->{backend}->Same(@_);
 }
 
-=head2 $diff->Items( $seqNum )
+=head2 Items
+
+  $diff->Items( $seqNum )
 
 See L<Algorithm::Diff> for method documentation.
 
@@ -269,7 +291,9 @@ sub Items {
   shift->{backend}->Items(@_);
 }
 
-=head2 $diff->Range( $seqNum, $base )
+=head2 Range
+
+  $diff->Range( $seqNum, $base )
 
 See L<Algorithm::Diff> for method documentation.
 
@@ -279,7 +303,9 @@ sub Range {
   shift->{backend}->Range(@_);
 }
 
-=head2 $diff->Min( $seqNum, $base )
+=head2 Min
+
+  $diff->Min( $seqNum, $base )
 
 See L<Algorithm::Diff> for method documentation.
 
@@ -289,7 +315,9 @@ sub Min {
   shift->{backend}->Min(@_);
 }
 
-=head2 $diff->Max( $seqNum, $base )
+=head2 Max
+
+  $diff->Max( $seqNum, $base )
 
 See L<Algorithm::Diff> for method documentation.
 
@@ -299,7 +327,9 @@ sub Max {
   shift->{backend}->Max(@_);
 }
 
-=head2 $diff->Get( @names )
+=head2 Get
+
+  $diff->Get( @names )
 
 See L<Algorithm::Diff> for method documentation.
 

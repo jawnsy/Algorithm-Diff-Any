@@ -1,4 +1,4 @@
-1.001 - XXX - Jonathan Yu <jawnsy@cpan.org>
+1.001 - 22 Dec 2009 - Jonathan Yu <jawnsy@cpan.org>
 
   + Update POD
   + Add dependency on Exporter 5.57 [RT#52656]

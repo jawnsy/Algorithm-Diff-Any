@@ -2,6 +2,9 @@
 
   + Update POD
   + Add dependency on Exporter 5.57 [RT#52656]
+  + Update MANIFEST.SKIP according to new defaults provided by
+    ExtUtils::Manifest
+  + Add dependency on Algorithm::Diff 1.1902 for OOP interface
 
 1.000 - 02 Dec 2009 - Jonathan Yu <jawnsy@cpan.org>
 

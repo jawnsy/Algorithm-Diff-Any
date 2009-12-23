@@ -21,13 +21,10 @@ my $builder = Module::Build->new(
   sign                  => 1,
   create_packlist       => 1,
 
-  # Maintain compatibility with ExtUtils::MakeMaker installations
-  create_makefile_pl    => 'passthrough',
-
   requires => {
     'perl'              => 5.006,
     'Exporter'          => 5.57, # for: use Exporter 'import'
-    'Algorithm::Diff'   => 0,
+    'Algorithm::Diff'   => 1.1902, # for OO interface
 
     # The tests are based on Test::More
     'Test::More'        => 0.62,

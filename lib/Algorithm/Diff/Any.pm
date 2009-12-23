@@ -203,7 +203,7 @@ sub Next {
   shift->{backend}->Next(@_);
 }
 
-=head2 Pref
+=head2 Prev
 
   $diff->Prev( $count )
 

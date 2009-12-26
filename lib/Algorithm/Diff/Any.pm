@@ -481,11 +481,9 @@ C<cdiff> subroutine.
 
 =head2 TEST COVERAGE
 
-  -------------------------- ------ ------ ------ ------ ------ ------
   File                        stmt   bran   cond   sub    pod   total
   -------------------------- ------ ------ ------ ------ ------ ------
   lib/Algorithm/Diff/Any.pm  100.0  100.0  100.0  100.0  100.0  100.0
-  Total                      100.0  100.0  100.0  100.0  100.0  100.0
 
 =head1 LICENSE
 

@@ -1,10 +1,9 @@
 # Algorithm::Diff::Any
 #  An interface that automagically selects the XS or Pure Perl port of
 #  the diff algorithm (Algorithm::Diff or Algorithm::Diff::XS)
-#
-# $Id$
 
 package Algorithm::Diff::Any;
+# ABSTRACT: Perl module to find differences between files
 
 use strict;
 use warnings;
@@ -22,19 +21,6 @@ our @EXPORT_OK = qw(
   traverse_sequences
   traverse_balanced
 );
-
-=head1 NAME
-
-Algorithm::Diff::Any - Perl module to find differences between files
-
-=head1 VERSION
-
-Version 1.001 ($Id$)
-
-=cut
-
-our $VERSION = '1.001';
-$VERSION = eval $VERSION;
 
 our $DRIVER = 'PP';
 
@@ -145,11 +131,7 @@ The following functions are available for import into your namespace:
 For full documentation, see the relevant functional descriptions in the Pure
 Perl implementation, L<Algorithm::Diff>.
 
-=cut
-
-=head1 METHODS
-
-=head2 new
+=method new
 
   Algorithm::Diff::Any->new( \@seq1, \@seq2, \%opts );
 
@@ -191,7 +173,7 @@ sub new {
   return $self;
 }
 
-=head2 Next
+=method Next
 
   $diff->Next( $count )
 
@@ -203,7 +185,7 @@ sub Next {
   shift->{backend}->Next(@_);
 }
 
-=head2 Prev
+=method Prev
 
   $diff->Prev( $count )
 
@@ -215,7 +197,7 @@ sub Prev {
   shift->{backend}->Prev(@_);
 }
 
-=head2 Reset
+=method Reset
 
   $diff->Reset( $pos )
 
@@ -229,7 +211,7 @@ sub Reset {
   return $self;
 }
 
-=head2 Copy
+=method Copy
 
   $diff->Copy( $pos, $newBase )
 
@@ -241,7 +223,7 @@ sub Copy {
   shift->{backend}->Copy(@_);
 }
 
-=head2 Base
+=method Base
 
   $diff->Base( $newBase )
 
@@ -253,7 +235,7 @@ sub Base {
   shift->{backend}->Base(@_);
 }
 
-=head2 Diff
+=method Diff
 
   $diff->Diff( )
 
@@ -265,13 +247,11 @@ sub Diff {
   shift->{backend}->Diff(@_);
 }
 
-=head2 Same
-
-See L<Algorithm::Diff> for method documentation.
-
-Code example:
+=method Same
 
   $diff->Same( )
+
+See L<Algorithm::Diff> for method documentation.
 
 =cut
 
@@ -279,7 +259,7 @@ sub Same {
   shift->{backend}->Same(@_);
 }
 
-=head2 Items
+=method Items
 
   $diff->Items( $seqNum )
 
@@ -291,7 +271,7 @@ sub Items {
   shift->{backend}->Items(@_);
 }
 
-=head2 Range
+=method Range
 
   $diff->Range( $seqNum, $base )
 
@@ -303,7 +283,7 @@ sub Range {
   shift->{backend}->Range(@_);
 }
 
-=head2 Min
+=method Min
 
   $diff->Min( $seqNum, $base )
 
@@ -315,7 +295,7 @@ sub Min {
   shift->{backend}->Min(@_);
 }
 
-=head2 Max
+=method Max
 
   $diff->Max( $seqNum, $base )
 
@@ -327,7 +307,7 @@ sub Max {
   shift->{backend}->Max(@_);
 }
 
-=head2 Get
+=method Get
 
   $diff->Get( @names )
 
@@ -338,14 +318,6 @@ See L<Algorithm::Diff> for method documentation.
 sub Get {
   shift->{backend}->Get(@_);
 }
-
-=head1 AUTHOR
-
-Jonathan Yu E<lt>jawnsy@cpan.orgE<gt>
-
-=head2 CONTRIBUTORS
-
-Your name here ;-)
 
 =head1 ACKNOWLEDGEMENTS
 
@@ -385,54 +357,7 @@ length I<n>.
 
 =back
 
-=head1 SUPPORT
-
-You can find documentation for this module with the perldoc command.
-
-    perldoc Algorithm::Diff::Any
-
-You can also look for information at:
-
-=over
-
-=item * AnnoCPAN: Annotated CPAN documentation
-
-L<http://annocpan.org/dist/Algorithm-Diff-Any>
-
-=item * CPAN Ratings
-
-L<http://cpanratings.perl.org/d/Algorithm-Diff-Any>
-
-=item * Search CPAN
-
-L<http://search.cpan.org/dist/Algorithm-Diff-Any>
-
-=item * CPAN Request Tracker
-
-L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Algorithm-Diff-Any>
-
-=item * CPAN Testing Service (Kwalitee Tests)
-
-L<http://cpants.perl.org/dist/overview/Algorithm-Diff-Any>
-
-=item * CPAN Testers Platform Compatibility Matrix
-
-L<http://www.cpantesters.org/show/Algorithm-Diff-Any.html>
-
-=back
-
-=head1 REPOSITORY
-
-You can access the most recent development version of this module at:
-
-L<http://svn.ali.as/cpan/trunk/Algorithm-Diff-Any>
-
-If you are a CPAN developer and would like to make modifications to the code
-base, please contact Adam Kennedy E<lt>adamk@cpan.orgE<gt>, the repository
-administrator. I only ask that you contact me first to discuss the changes you
-wish to make to the distribution.
-
-=head1 FEEDBACK
+=head1 BUGS_OLD
 
 Please send relevant comments, rotten tomatoes and suggestions directly to the
 maintainer noted above.
@@ -476,38 +401,6 @@ by L<Algorithm::Diff::XS>. As of time of writing, this is limited to the
 C<cdiff> subroutine.
 
 =back
-
-=head1 QUALITY ASSURANCE METRICS
-
-=head2 TEST COVERAGE
-
-  File                        stmt   bran   cond   sub    pod   total
-  -------------------------- ------ ------ ------ ------ ------ ------
-  lib/Algorithm/Diff/Any.pm  100.0  100.0  100.0  100.0  100.0  100.0
-
-=head1 LICENSE
-
-Copyright (C) 2009 by Jonathan Yu <jawnsy@cpan.org>
-
-This package is distributed under the same terms as Perl itself. Please
-see the F<LICENSE> file included in this distribution for full details of
-these terms.
-
-=head1 DISCLAIMER OF WARRANTY
-
-This software is provided by the copyright holders and contributors
-"AS IS" and ANY EXPRESS OR IMPLIED WARRANTIES, including, but not
-limited to, the IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-A PARTICULAR PURPOSE ARE DISCLAIMED.
-
-In no event shall the copyright owner or contributors be liable for
-any direct, indirect, incidental, special, exemplary or consequential
-damages (including, but not limited to, procurement of substitute
-goods or services; loss of use, data or profits; or business
-interruption) however caused and on any theory of liability, whether
-in contract, strict liability or tort (including negligence or
-otherwise) arising in any way out of the use of this software, even if
-advised of the possibility of such damage.
 
 =cut
 

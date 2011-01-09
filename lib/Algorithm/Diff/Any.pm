@@ -1,7 +1,3 @@
-# Algorithm::Diff::Any
-#  An interface that automagically selects the XS or Pure Perl port of
-#  the diff algorithm (Algorithm::Diff or Algorithm::Diff::XS)
-
 package Algorithm::Diff::Any;
 # ABSTRACT: Perl module to find differences between files
 
@@ -93,15 +89,6 @@ In order to force use of one or the other, simply load the appropriate module:
   use Algorithm::Diff;
   my $diff = Algorithm::Diff->new();
 
-=head1 COMPATIBILITY
-
-This module was tested under Perl 5.10.1, using Debian Linux. However, because
-it's Pure Perl and doesn't do anything too obscure, it should be compatible
-with any version of Perl that supports its prerequisite modules.
-
-If you encounter any problems on a different version or architecture, please
-contact the maintainer.
-
 =head1 EXPORTABLE FUNCTIONS
 
 The following functions are available for import into your namespace:
@@ -151,7 +138,8 @@ throw an exception on error.
 =cut
 
 # Wrappers around the actual methods
-sub new {
+sub new
+{
   my ($class, $seq1, $seq2, $opts) = @_;
 
   Carp::croak('You must call this as a class method') if ref($class);
@@ -162,10 +150,12 @@ sub new {
   my $self = {
   };
 
-  if ($DRIVER eq 'XS') {
+  if ($DRIVER eq 'XS')
+  {
     $self->{backend} = Algorithm::Diff::XS->new($seq1, $seq2, $opts);
   }
-  else {
+  else
+  {
     $self->{backend} = Algorithm::Diff->new($seq1, $seq2, $opts);
   }
 
@@ -181,7 +171,8 @@ See L<Algorithm::Diff> for method documentation.
 
 =cut
 
-sub Next {
+sub Next
+{
   shift->{backend}->Next(@_);
 }
 
@@ -193,7 +184,8 @@ See L<Algorithm::Diff> for method documentation.
 
 =cut
 
-sub Prev {
+sub Prev
+{
   shift->{backend}->Prev(@_);
 }
 
@@ -205,7 +197,8 @@ See L<Algorithm::Diff> for method documentation.
 
 =cut
 
-sub Reset {
+sub Reset
+{
   my $self = shift;
   $self->{backend}->Reset(@_);
   return $self;
@@ -219,7 +212,8 @@ See L<Algorithm::Diff> for method documentation.
 
 =cut
 
-sub Copy {
+sub Copy
+{
   shift->{backend}->Copy(@_);
 }
 
@@ -231,7 +225,8 @@ See L<Algorithm::Diff> for method documentation.
 
 =cut
 
-sub Base {
+sub Base
+{
   shift->{backend}->Base(@_);
 }
 
@@ -243,7 +238,8 @@ See L<Algorithm::Diff> for method documentation.
 
 =cut
 
-sub Diff {
+sub Diff
+{
   shift->{backend}->Diff(@_);
 }
 
@@ -255,7 +251,8 @@ See L<Algorithm::Diff> for method documentation.
 
 =cut
 
-sub Same {
+sub Same
+{
   shift->{backend}->Same(@_);
 }
 
@@ -267,7 +264,8 @@ See L<Algorithm::Diff> for method documentation.
 
 =cut
 
-sub Items {
+sub Items
+{
   shift->{backend}->Items(@_);
 }
 
@@ -279,7 +277,8 @@ See L<Algorithm::Diff> for method documentation.
 
 =cut
 
-sub Range {
+sub Range
+{
   shift->{backend}->Range(@_);
 }
 
@@ -291,7 +290,8 @@ See L<Algorithm::Diff> for method documentation.
 
 =cut
 
-sub Min {
+sub Min
+{
   shift->{backend}->Min(@_);
 }
 
@@ -303,7 +303,8 @@ See L<Algorithm::Diff> for method documentation.
 
 =cut
 
-sub Max {
+sub Max
+{
   shift->{backend}->Max(@_);
 }
 
@@ -315,7 +316,8 @@ See L<Algorithm::Diff> for method documentation.
 
 =cut
 
-sub Get {
+sub Get
+{
   shift->{backend}->Get(@_);
 }
 
@@ -357,16 +359,6 @@ length I<n>.
 
 =back
 
-=head1 BUGS_OLD
-
-Please send relevant comments, rotten tomatoes and suggestions directly to the
-maintainer noted above.
-
-If you have a bug report or feature request, please file them on the CPAN
-Request Tracker at L<http://rt.cpan.org>. If you are able to submit your bug
-report in the form of failing unit tests, you are B<strongly> encouraged to do
-so.
-
 =head1 SEE ALSO
 
 L<Algorithm::Diff>, the classic reference implementation for finding the
@@ -378,12 +370,6 @@ L<Algorithm::Diff::XS>, the C/XS optimized version of Algorithm::Diff, which
 will be used automatically if available.
 
 =head1 CAVEATS
-
-=head2 KNOWN BUGS
-
-There are no known bugs as of this release.
-
-=head2 LIMITATIONS
 
 =over
 

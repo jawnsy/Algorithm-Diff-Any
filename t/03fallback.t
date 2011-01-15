@@ -1,9 +1,6 @@
 #!/usr/bin/perl -T
 
-# t/05fallback.t
-#  Tests use of the Pure Perl interface
-#
-# $Id$
+# ABSTRACT: Tests use of the Pure Perl interface
 
 use strict;
 use warnings;
